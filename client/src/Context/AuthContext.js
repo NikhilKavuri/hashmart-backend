@@ -22,8 +22,6 @@ const AuthProvider = ({ children }) => {
   useEffect(async () => {
     const status =await  JSON.parse(localStorage.getItem("loggedIn"));
     const userData = await JSON.parse(localStorage.getItem("user"))
-    console.log(status)
-    console.log(userData)
     if (status) {
      setLoggedIn(true)
      setCurrentUser(userData)
@@ -49,7 +47,6 @@ const AuthProvider = ({ children }) => {
   const signup = async (name, email, password) => {
     try {
       const user = await Backsignup(name, email, password);
-      console.log(user);
       if (user === "Email already exists") {
         setErrors({
           email: "User already exists. Please choose a different email.",
