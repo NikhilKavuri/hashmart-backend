@@ -18,7 +18,6 @@ const CartProvider = ({ children }) => {
     let userData = JSON.parse(localStorage.getItem("user"));
     return userData._id;
   };
-  console.log(loggedIn);
  
   useEffect(async () => {
     if (loggedIn) {
